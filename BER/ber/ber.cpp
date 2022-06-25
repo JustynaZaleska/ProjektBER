@@ -110,7 +110,6 @@ int main(int argc, char** argv)
         return 0;
     }
 
-
     BER(argv[1], argv[2]);
 
 }
