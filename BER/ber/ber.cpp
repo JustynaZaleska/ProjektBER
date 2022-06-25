@@ -114,5 +114,4 @@ int main(int argc, char** argv)
 
     BER(argv[1], argv[2]);
 
-
 }
