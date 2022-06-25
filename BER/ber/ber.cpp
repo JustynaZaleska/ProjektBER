@@ -81,3 +81,22 @@ void BER(char* path1, char* path2) {
 
     fstream log("log.txt", ios::out);
 
+    // Wynik obliczen drukowany jest w konsoli (Jako wynik podajemy: Ilosc porownanych bitow, ilosc roznych bitow, wynik BER, czas obliczen)
+    cout << time(NULL) << endl;
+    cout << "Ilosc porownanych bitow: " << len1 * 8 << endl;
+    cout << "ilosc roznych bitow: " << errors << endl;
+    cout << "BER: " << setprecision(5) << ber << endl;
+    cout << "Czas obliczen (sek): " << czas << endl;
+
+    log << time(NULL) << endl;
+    log << "Ilosc porownanych bitow: " << len1 * 8 << endl;
+    log << "ilosc roznych bitow: " << errors << endl;
+    log << "BER: " << setprecision(5) << ber << endl;
+    log << "Czas obliczen (sek): " << czas << endl;
+
+
+    log.close();
+
+    delete buffer1;
+    delete buffer2;
+
