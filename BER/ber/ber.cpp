@@ -101,3 +101,15 @@ void BER(char* path1, char* path2) {
     delete buffer2;
 }
 
+int main(int argc, char** argv)
+{
+
+    if (argc != 3)
+    {
+        cout << " Nieprawidlowe parametry";
+        return 0;
+    }
+
+    BER(argv[1], argv[2]);
+
+}
