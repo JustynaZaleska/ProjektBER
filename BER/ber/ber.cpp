@@ -73,4 +73,11 @@ void BER(char* path1, char* path2) {
         }
 
     }
+    // obliczmy BER
+    double ber = (double)errors / (double)(len1 * 8);
+
+    clock_t czas_koncowy = clock();
+    double czas = (double)(czas_koncowy - czas_poczatkowy) / CLOCKS_PER_SEC;
+
+    fstream log("log.txt", ios::out);
 
