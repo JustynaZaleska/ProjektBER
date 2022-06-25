@@ -58,3 +58,19 @@ void BER(char* path1, char* path2) {
     char* buffer2 = new char[len2];
     f2.read(buffer2, len2);
     f2.close();
+
+    // przechodzimy przez poszczegolne bajty i sprawdzamy o ile bitow siê roznia
+    // wynik dodajemy do zmiennej errors
+    int errors = 0;
+    for (int i = 0; i < len1; i++)
+    {
+        unsigned char b1 = (unsigned char)buffer1[i];
+        unsigned char b2 = (unsigned char)buffer2[i];
+
+        if (b1 != b2)
+        {
+            errors += bit_diff(b1, b2);
+        }
+
+    }
+
