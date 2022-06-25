@@ -99,4 +99,5 @@ void BER(char* path1, char* path2) {
 
     delete buffer1;
     delete buffer2;
+}
 
