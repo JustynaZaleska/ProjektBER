@@ -31,3 +31,30 @@ int bit_diff(unsigned char b1, unsigned char  b2) {
 
     return diff;
 }
+
+// obliczamy BER pomiêdzy dwoma plikami
+
+void BER(char* path1, char* path2) {
+    clock_t czas_poczatkowy = clock();
+
+    // wczytujemy plik 1
+    std::ifstream f1;
+    int len1;
+    f1.open(path1);
+    f1.seekg(0, std::ios::end);
+    len1 = f1.tellg();
+    f1.seekg(0, std::ios::beg);
+    char* buffer1 = new char[len1];
+    f1.read(buffer1, len1);
+    f1.close();
+
+    // wczytujemy plik 2
+    std::ifstream f2;
+    int len2;
+    f2.open(path2);
+    f2.seekg(0, std::ios::end);
+    len2 = f2.tellg();
+    f2.seekg(0, std::ios::beg);
+    char* buffer2 = new char[len2];
+    f2.read(buffer2, len2);
+    f2.close();
